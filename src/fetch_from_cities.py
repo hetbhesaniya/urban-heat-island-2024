@@ -10,7 +10,7 @@ OUT = os.path.join(ROOT, "data", "raw", "temperatures.csv")
 def fetch_city_hourly(lat, lon, start_dt, end_dt, radius_km=60, top_n=3, min_cov=0.85, force_nearest=False):
     st_all = Stations().nearby(lat, lon).fetch(50)        # station ID is the INDEX
     if st_all.empty:
-        return pd.DataFrame(columns=["timestamp","temp_c"])
+        return pd.DataFrame(columns=["timestamp", "temp_c"])
 
     # filter by radius; fallback to global nearest if empty
     st = st_all[st_all["distance"] <= radius_km * 1000] if "distance" in st_all.columns else st_all
@@ -45,7 +45,7 @@ def fetch_city_hourly(lat, lon, start_dt, end_dt, radius_km=60, top_n=3, min_cov
             series.append(h["temp"].rename(f"temp_{sid}").reindex(full))
 
     if not series:
-        return pd.DataFrame(columns=["timestamp","temp_c"])
+        return pd.DataFrame(columns=["timestamp", "temp_c"])
 
     stack = pd.concat(series, axis=1)
     mean_c = stack.mean(axis=1, skipna=True).to_frame("temp_c")
@@ -82,7 +82,7 @@ def main():
     out_frames = []
     for i, row in cities.iterrows():
         name = str(row[args.name_col]); lat = float(row[args.lat_col]); lon = float(row[args.lon_col])
-        print(f"[{i+1}/{len(cities)}] {name}: ({lat:.4f}, {lon:.4f})")
+        print(f"[{int(i)+1}/{len(cities)}] {name}: ({lat:.4f}, {lon:.4f})")
         df = fetch_city_hourly(lat, lon, start_dt, end_dt,
                                radius_km=args.radius_km, top_n=args.top_n,
                                min_cov=args.min_coverage, force_nearest=args.force_nearest)
