@@ -16,6 +16,16 @@
   - daily aggregates for retention metric
 - **Tableau inputs:** `reports/tableau/zone_hourly.csv`, `reports/tableau/zone_daily.csv`, `reports/tableau/hotspots.csv`
 
+## Key Insights (Phoenix 2024)
+
+- **Urban heat persistence:** nighttime heat retention stays positive through June–September, showing slower cooling overnight.  
+- **Peak heat hours:** 14:00–18:00 show the highest hourly anomalies, especially on weekdays.  
+- **Weekday vs weekend:** minimal difference—urban form, not traffic, drives most of the heat.  
+- **Hot hours:** anomalies ≥ 2 °C cluster in late afternoons across summer months.  
+- **Intervention window:** 05:00–08:00 remains the coolest and best for outdoor activity or cooling strategies.  
+
+These trends confirm the classic *Urban Heat Island* pattern—high afternoon peaks and sustained overnight warmth in dense city zones.
+
 ## Reproduce locally
 ```bash
 # macOS / Python 3.12
