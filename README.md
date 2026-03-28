@@ -1,6 +1,6 @@
 # Urban Heat Island — Phoenix 2024
 
-**Live dashboard:** [<TABLEAU_LINK>](https://public.tableau.com/app/profile/het.bhesaniya/viz/Book1_17425054766780/Dashboard1?publish=yes)
+**Live dashboard:** [<TABLEAU_LINK>](https://public.tableau.com/app/profile/het.bhesaniya/viz/Book1_17425054766780/UrbanHeatIslandEffectAnalysisPhoenix2024#1)
 
 ## What’s inside
 - **Hourly trend** (cleaned) + **24h moving average**
